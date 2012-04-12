@@ -1,0 +1,16 @@
+<% content_for :left do %>
+  <p><%= link_to "Create New User", new_user_path %></p>
+  <table>
+    <tr>
+      <th>Name</th>
+    </tr>
+    <%= will_paginate %>
+    <% for user in @users %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= link_to "Show", user %></td>
+      </tr>
+    <% end %>
+  </table>
+
+<% end %>

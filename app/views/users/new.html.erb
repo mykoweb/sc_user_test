@@ -1,0 +1,13 @@
+<% content_for :left do %>
+  <%= form_for @user do |f| %>
+    <%= render 'shared/error_messages', :object => f.object %>
+    <p>
+      <%= f.label :name %><br />
+      <%= f.text_field :name %>
+    </p>
+    <p><%= f.submit %></p>
+  <% end %>
+
+
+  <p><%= link_to "Back to List", users_path %></p>
+<% end %>

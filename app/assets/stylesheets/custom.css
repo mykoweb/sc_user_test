@@ -1,0 +1,25 @@
+.container { margin-top: 18px; }
+
+a { text-decoration: none; }
+
+nav {
+  float: right;
+  white-space: nowrap;
+}
+
+nav ul {
+  margin: 0; padding: 0;
+}
+
+nav ul li {
+  list-style-type: none;
+  display: inline-block;
+  padding: 3px 0;
+}
+
+nav ul li a {
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 18px;
+}
+

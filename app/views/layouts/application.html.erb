@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= @title %></title>
+  <%= csrf_meta_tags %>
+  <%= render    'layouts/stylesheets' %>
+  <%= javascript_include_tag "application" %>
+</head>
+<body>
+  <div class="container">
+    <%= render 'layouts/header' %>
+    <div><h1><%= @title %></h1><div>
+    <section class="round shadow span-7">
+      <%= yield :left %>
+    </section>
+    <section class="round shadow span-7">
+      <%= yield :center %>
+    </section>
+    <section class="round shadow span-7 last">
+      <%= yield :right %>
+    </section>
+  </div>
+  <%= debug(params) if Rails.env.development? %>
+</body>
+</html>
