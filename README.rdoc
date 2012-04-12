@@ -34,3 +34,9 @@ Make sure to run 'bundle install' and set up a PostGreSQL database with the data
 Copy the config/database.example.yml file to config/database.yml and fill in your user name and password for PostGreSQL.
 
 You will also need to manually create config/initializers/secret_token.rb.
+
+Run 'rake db:migrate'.
+
+Also, if you want your tables filled with fake user data run 'rake db:populate'.
+
+Finally, run 'rails s' and you should be able to access the site on your local server.
