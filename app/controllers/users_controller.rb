@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  caches_page :index, :show
+
   def index
     @title = "All users"
     @users = User.paginate(:page => params[:page])
@@ -12,6 +14,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save
+      expire_page users_path
+      expire_page "/"
       redirect_to @user, :notice => "Successfully created user."
     else
       render new_user_path

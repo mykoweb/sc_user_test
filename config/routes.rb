@@ -1,4 +1,16 @@
 ScUserTest::Application.routes.draw do
+
+  # Need to explicitly define paths for page caching for pages using pagination
+  get 'users/:id/users_following_page/:users_following_page/users_followers_page/:users_followers_page/users_not_following_page/:users_not_following_page', :to => 'users#show'
+  get 'users/:id/users_following_page/:users_following_page/users_followers_page/:users_followers_page', :to => 'users#show'
+  get 'users/:id/users_following_page/:users_following_page/users_not_following_page/:users_not_following_page', :to => 'users#show'
+  get 'users/:id/users_followers_page/:users_followers_page/users_not_following_page/:users_not_following_page', :to => 'users#show'
+  get 'users/:id/users_following_page/:users_following_page', :to => 'users#show'
+  get 'users/:id/users_followers_page/:users_followers_page', :to => 'users#show'
+  get 'users/:id/users_not_following_page/:users_not_following_page', :to => 'users#show'
+
+  get 'users/page/:page', :to => 'users#index'
+
   resources :users do
     member do
       get :following, :followers
