@@ -8,7 +8,8 @@
         <td><%= link_to "#{@each_users_following.name}", @each_users_following %></td>
         <td>
           <%= button_to("Unfollow", { :controller => "relationships", :action => "destroy",
-                                      :id => @user.id }, :method => :delete) %>
+                                      :id => @user.id, :followed_id => @each_users_following.id },
+                                      :method => :delete) %>
         </td>
       </tr>
     <% end %>
