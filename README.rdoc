@@ -1,0 +1,36 @@
+= Rails 3 Application for SC Programming Exercise
+
+== PROBLEM
+
+Create models that allow a user to follow another user.
+
+The user model's only attribute is "name". You may scaffold the create action.
+Create an interface that accepts post requests that allows users to
+"follow" other users.
+The user's "index" action should list all of the users.
+The user's "show" action should show:
+1) The user's name
+2) The users the user is currently following (with a button to remove
+that following)
+3) The users the user is not following (with a button to add that following)
+4)  The users currently following this user
+Do not create a login system for this exercise.
+
+We look for three primary figures of merit in a submitted work:
+* Correctness. Does the submitted work solve the problem as stated?
+* Clarity. Would the submitted work be easy for others to understand
+and evolve?  Does it solve the problem with a minimum of code? Is it
+fully self-documenting?
+* Efficiency. How would the solution scale as the size of the input scaled?
+
+== GETTING STARTED & INSTALLATION
+
+I am using Rails 3.1.4 and Ruby 1.9.2-p290.
+
+Git clone https://github.com/mykoweb/sc_user_test.
+
+Make sure to run 'bundle install' and set up a PostGreSQL database with the databases 'sc_development', 'sc_test', and 'sc_production'.
+
+Copy the config/database.example.yml file to config/database.yml and fill in your user name and password for PostGreSQL.
+
+You will also need to manually create config/initializers/secret_token.rb.
