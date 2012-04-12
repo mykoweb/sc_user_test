@@ -7,8 +7,8 @@
     <%= will_paginate %>
     <% for user in @users %>
       <tr>
-        <td><%= user.name %></td>
-        <td><%= link_to "Show", user %></td>
+        <td class="first-column"><%= user.name %></td>
+        <td class="second-column"><%= link_to "Show", user %></td>
       </tr>
     <% end %>
   </table>

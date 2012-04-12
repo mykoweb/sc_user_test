@@ -10,16 +10,15 @@
   <div class="container">
     <%= render 'layouts/header' %>
     <div><h1><%= @title %></h1><div>
-    <section class="round shadow span-7">
+    <section class="round shadow span-8">
       <%= yield :left %>
     </section>
-    <section class="round shadow span-7">
+    <section class="round shadow span-8">
       <%= yield :center %>
     </section>
-    <section class="round shadow span-7 last">
+    <section class="round shadow span-8 last">
       <%= yield :right %>
     </section>
   </div>
-  <%= debug(params) if Rails.env.development? %>
 </body>
 </html>

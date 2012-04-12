@@ -5,8 +5,10 @@
     <%= will_paginate @users_following, :param_name => :users_following_page %>
     <% for @each_users_following in @users_following %>
       <tr>
-        <td><%= link_to "#{@each_users_following.name}", @each_users_following %></td>
-        <td>
+        <td class="first-column">
+          <%= link_to "#{@each_users_following.name}", @each_users_following %>
+        </td>
+        <td class="second-column">
           <%= button_to("Unfollow", { :controller => "relationships", :action => "destroy",
                                       :id => @user.id, :followed_id => @each_users_following.id },
                                       :method => :delete) %>
@@ -23,8 +25,8 @@
     <%= will_paginate @users_followers, :param_name => :users_followers_page %>
     <% for @each_users_followers in @users_followers %>
       <tr>
-        <td><%= link_to "#{@each_users_followers.name}", @each_users_followers %></td>
-        <td></td>
+        <td class="first-column"><%= link_to "#{@each_users_followers.name}", @each_users_followers %></td>
+        <td class="second-column"></td>
       </tr>
     <% end %>
   </table>
@@ -38,8 +40,10 @@
     <% for @each_users_not_following in @users_not_following %>
       <% if @each_users_not_following.id != @user.id then %>
         <tr>
-          <td><%= link_to "#{@each_users_not_following.name}", @each_users_not_following %></td>
-          <td>
+          <td class="first-column">
+            <%= link_to "#{@each_users_not_following.name}", @each_users_not_following %>
+          </td>
+          <td class="second-column">
             <%= button_to("Follow", { :controller => "relationships", :action => "create",
                                       :id => @user.id, :followed_id => @each_users_not_following.id }) %>
           </td>

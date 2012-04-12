@@ -23,3 +23,7 @@ nav ul li a {
   font-size: 18px;
 }
 
+table tr td.first-column {
+  width: 220px;
+  font-size: 16px;
+}
